@@ -21,7 +21,7 @@ module.exports.config = {
   version: '1.1.7',
   hasPermission: 0,
   usePrefix: false,
-  aliases: ['gpt', 'keijo'],
+  aliases: ['gpt', 'lorex'],
   description: "An AI command powered by Gemini Vision",
   usages: "ai [prompt]",
   credits: 'LorexAi',
@@ -47,7 +47,7 @@ module.exports.run = async function({ api, event, args }) {
   if (isPhotoReply) {
     const photoUrl = event.messageReply.attachments?.[0]?.url;
     if (!photoUrl) return api.sendMessage("❌ Could not get image URL.", threadID, messageID);
-    if (!input) return api.sendMessage("Yup, 𝐊𝐞𝐢𝐣𝐨 𝐀𝐢 ako! 😎 Nandito ako para tulungan ka sa mga tanong, gawain, o kahit na pag-uusap lang. Anong gusto mo gawin o pag-usapan?🥰", threadID, messageID);
+    if (!input) return api.sendMessage("📸 Please provide a prompt along with the image.", threadID, messageID);
 
     const tempMsg = await sendTemp(api, threadID, "🔍 Analyzing image...");
 
@@ -73,9 +73,9 @@ module.exports.run = async function({ api, event, args }) {
   }
 
   // === GPT-4o TEXT MODE ===
-  if (!input) return api.sendMessage("❌ Please provide a prompt.", threadID, messageID);
+  if (!input) return api.sendMessage("Yup, 𝐊𝐞𝐢𝐣𝐨 𝐀𝐢 ako! 😎 Nandito ako para tulungan ka sa mga tanong, gawain, o kahit na pag-uusap lang. Anong gusto mo gawin o pag-usapan?🥰", threadID, messageID);
 
-  const tempMsg = await sendTemp(api, threadID, "🔄 Generating...");
+  const tempMsg = await sendTemp(api, threadID, "🔄 Wait kalang buddy...");
 
   try {
     const { data } = await axios.get('https://daikyu-api.up.railway.app/api/o3-mini', {
