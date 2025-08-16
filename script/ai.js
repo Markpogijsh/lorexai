@@ -21,7 +21,7 @@ module.exports.config = {
   version: '1.1.7',
   hasPermission: 0,
   usePrefix: false,
-  aliases: ['gpt', 'lorex'],
+  aliases: ['gpt', 'keijo'],
   description: "An AI command powered by Gemini Vision",
   usages: "ai [prompt]",
   credits: 'LorexAi',
