@@ -47,7 +47,7 @@ module.exports.run = async function({ api, event, args }) {
   if (isPhotoReply) {
     const photoUrl = event.messageReply.attachments?.[0]?.url;
     if (!photoUrl) return api.sendMessage("❌ Could not get image URL.", threadID, messageID);
-    if (!input) return api.sendMessage("📸 Please provide a prompt along with the image.", threadID, messageID);
+    if (!input) return api.sendMessage("Yup, 𝐊𝐞𝐢𝐣𝐨 𝐀𝐢 ako! 😎 Nandito ako para tulungan ka sa mga tanong, gawain, o kahit na pag-uusap lang. Anong gusto mo gawin o pag-usapan?🥰", threadID, messageID);
 
     const tempMsg = await sendTemp(api, threadID, "🔍 Analyzing image...");
 
