@@ -147,7 +147,7 @@ function setupMessageListener(api) {
             name = userInfo?.[senderID]?.name || "Someone";
           } catch (_) {}
           if (original.body) {
-            api.sendMessage(`🕵️‍♂️ ${name} tried to unsend:\n\n"${original.body}"`, threadID);
+            api.sendMessage(`🕵️‍♂️ ${name} huy buddy  wag kana mag unsend pag my nakakita🥰:\n\n"${original.body}"`, threadID);
           }
           if (original.attachments.length > 0) {
             for (const att of original.attachments) {
